@@ -9,13 +9,17 @@ on:
       archetect-options:
         description: "Archetect Render Options"
         required: false
+      github-token:
+        description: "A GitHub Token with `repo` and `workflows` permission"
+        required: true
 
 jobs:
   render:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: scaffoldly/archetect-render-action@v1
+      - uses: scaffoldly/archetect-render-action@1.0.3-0
         with:
           source: "${{ github.event.inputs.archetect-source }}"
           options: "${{ github.event.inputs.archetect-options }}"
+          github-token: "${{ github.event.inputs.github-token }}"
