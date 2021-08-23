@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: scaffoldly/archetect-render-action@1.0.3-4
+      - uses: scaffoldly/archetect-render-action@1.0.3-5
         with:
           source: "${{ github.event.inputs.archetect-source }}"
           options: "${{ github.event.inputs.archetect-options }}"
