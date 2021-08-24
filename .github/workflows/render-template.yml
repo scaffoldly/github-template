@@ -16,10 +16,12 @@ on:
 jobs:
   render:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: "${{ github.event.inputs.github-token }}"
     steps:
       - uses: actions/checkout@v2
       - uses: scaffoldly/archetect-render-action@1.0.3-6
         with:
           source: "${{ github.event.inputs.archetect-source }}"
           options: "${{ github.event.inputs.archetect-options }}"
-          github-token: "${{ github.event.inputs.github-token }}"
+#           github-token: "${{ github.event.inputs.github-token }}"
