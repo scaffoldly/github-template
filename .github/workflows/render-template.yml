@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           token: ${{ github.event.inputs.github-token }}
-      - uses: scaffoldly/archetect-render-action@1.0.3-6
+      - uses: scaffoldly/archetect-render-action@v1
         with:
           source: "${{ github.event.inputs.archetect-source }}"
           options: "${{ github.event.inputs.archetect-options }}"
