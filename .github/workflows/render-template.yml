@@ -21,8 +21,9 @@ jobs:
         with:
           token: ${{ github.event.inputs.github-token }}
       - run: |
-          echo "source: '${{ github.event.inputs.archetect-source }}'" > .archetect
-          echo "options: '${{ github.event.inputs.archetect-options }}'" >> .archetect
+          echo "${{ github.run_id }}:" >> .archetect-history
+          echo "  source: '${{ github.event.inputs.archetect-source }}'" >> .archetect-history
+          echo "  options: '${{ github.event.inputs.archetect-options }}'" >> .archetect-history
       - uses: scaffoldly/archetect-render-action@v1
         with:
           source: "${{ github.event.inputs.archetect-source }}"
